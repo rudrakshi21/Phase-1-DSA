@@ -1,0 +1,185 @@
+// Single Inheritance Code//
+
+#include <iostream>
+using namespace std;
+
+class Human
+{
+
+    protected:
+    string name;
+};
+
+class Student: public Human
+{
+    
+   int roll_no;
+   
+   public:
+   Student(string n, int a)
+   {
+       name=n;
+       roll_no=a;
+   }
+   
+   void display()
+   {
+       cout<<name<<" "<<roll_no<<endl;
+   }
+};
+int main() {
+    Student obj("Rudrakshi",10);
+    obj.display();
+    
+
+    return 0;
+}
+
+
+
+//Multilevel Inheritance//
+
+#include <iostream>
+using namespace std;
+
+
+class Human
+{
+    protected:
+    string name;
+};
+
+class Person:public Human
+{
+    protected:
+    int age;
+};
+
+class Student: public Person
+{
+    
+   int roll_no;
+   
+   public:
+   Student(string n, int a,int r)
+   {
+       name=n;
+       age=a;
+       roll_no=r;
+   }
+   
+   void display()
+   {
+       cout<<name<<" "<<age<<" "<<roll_no<<endl;
+   }
+};
+int main() {
+    Student obj("Rudrakshi",21,10);
+    obj.display();
+    
+
+    return 0;
+}
+
+
+//Multiple Inheritance//
+
+#include <iostream>
+using namespace std;
+
+
+class Human
+{
+    protected:
+    string name;
+};
+
+class Person
+{
+    protected:
+    int age;
+};
+
+class Student: public Human ,Person
+{
+    
+   int roll_no;
+   
+   public:
+   Student(string n, int a,int r)
+   {
+       name=n;
+       age=a;
+       roll_no=r;
+   }
+   
+   void display()
+   {
+       cout<<name<<" "<<age<<" "<<roll_no<<endl;
+   }
+};
+int main() {
+    Student obj("Rudrakshi",21,10);
+    obj.display();
+    
+
+    return 0;
+}
+
+
+//Hierarchical Inheritance
+
+#include <iostream>
+using namespace std;
+
+class Person
+{
+protected:
+    string name;
+};
+
+class Student : public Person
+{
+    int fees;
+
+public:
+    Student(string n, int f)
+    {
+        name = n;
+        fees = f;
+    }
+
+    void display()
+    {
+        cout << "Student: " << name << " " << fees << endl;
+    }
+};
+
+
+class Teacher : public Person
+{
+    int salary;
+
+public:
+    Teacher(string n, int s)
+    {
+        name = n;
+        salary = s;
+    }
+
+    void display()
+    {
+        cout << "Teacher: " << name << " " << salary << endl;
+    }
+};
+
+int main()
+{
+    Student obj1("Rudrakshi", 25000);
+    Teacher obj2("Aditya", 50000);
+
+    obj1.display();
+    obj2.display();
+
+    return 0;
+}
